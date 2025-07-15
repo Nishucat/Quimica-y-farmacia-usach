@@ -1,31 +1,75 @@
+// Prerrequisitos para cada ramo (usar data-id)
+const prerequisitos = {
+  quimica2: ["quimica1"],
+  matematica2: ["matematica1"],
+  fisica2: ["fisica1"],
+  biologia2: ["biologia1"],
+  quimica_org2: ["quimica_org1"],
 
-body {
-  font-family: sans-serif;
-  padding: 20px;
-  background: #f4f4f4;
+  analitica2: ["analitica1"],
+  bioquimica2: ["bioquimica1"],
+  microbiologia2: ["microbiologia1"],
+  quimica_fisica2: ["quimica_fisica1"],
+  farmacologia1: ["bioquimica1", "microbiologia1"],
+
+  tecnologia_farmaceutica2: ["tecnologia_farmaceutica1"],
+  farmacologia2: ["farmacologia1"],
+  toxicologia2: ["toxicologia1"],
+  microbiologia3: ["microbiologia2"],
+  quimica_analitica_instrumental: ["analitica2"],
+
+  farmacia_clinica: ["farmacia_general", "farmacologia2"],
+  gestion_calidad: ["farmacia_general"],
+  bioetica: [],
+  investigacion: [],
+
+  practica1: ["farmacia_clinica", "gestion_calidad"],
+  seminario1: ["investigacion"],
+  electivo2: ["electivo"],
+
+  practica2: ["practica1", "seminario1"],
+  seminario2: ["seminario1"],
+
+  trabajo_grado: ["practica2", "seminario2"],
+};
+
+// Estado de ramos completados (se carga vacío)
+let completados = new Set();
+
+const ramos = document.querySelectorAll(".ramo");
+
+function puedeDesbloquear(ramoId) {
+  if (!prerequisitos[ramoId]) return true; // Si no tiene prerrequisitos
+  return prerequisitos[ramoId].every((pre) => completados.has(pre));
 }
-h1 {
-  color: #333;
+
+function actualizarEstado() {
+  ramos.forEach((ramo) => {
+    const id = ramo.dataset.id;
+    if (completados.has(id)) {
+      ramo.classList.add("completed");
+      ramo.classList.remove("locked");
+    } else if (puedeDesbloquear(id)) {
+      ramo.classList.remove("locked");
+    } else {
+      ramo.classList.add("locked");
+      ramo.classList.remove("completed");
+    }
+  });
 }
-.semestre {
-  margin-bottom: 30px;
-  padding: 10px;
-  border-left: 5px solid #aaa;
-}
-.ramo {
-  margin: 5px 0;
-  padding: 5px;
-  border-radius: 5px;
-}
-.bloqueado input {
-  pointer-events: none;
-}
-.ramo.bloqueado {
-  background-color: #d0d8e8;
-}
-.ramo.desbloqueado {
-  background-color: #a0eaff;
-}
-.ramo.completado {
-  background-color: #fffaa0;
-}
+
+ramos.forEach((ramo) => {
+  ramo.addEventListener("click", () => {
+    const id = ramo.dataset.id;
+    if (ramo.classList.contains("locked")) return; // No hacer nada si está bloqueado
+    if (completados.has(id)) {
+      completados.delete(id);
+    } else {
+      completados.add(id);
+    }
+    actualizarEstado();
+  });
+});
+
+// Inicializa el estado al cargar la página
+actualizarEstado();
