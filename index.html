@@ -1,13 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Malla Química y Farmacia - Completa</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malla Química y Farmacia USACH</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Malla Curricular - Química y Farmacia (10 Semestres)</h1>
-  <div id="contenedor-malla"></div>
+  <h1>Malla Curricular Química y Farmacia - USACH</h1>
+  <div id="malla-container">
+    <!-- Cada semestre es una columna -->
+    <div class="semestre" data-semestre="1">
+      <h2>1° Semestre</h2>
+      <div class="ramo" data-id="quimica1">Química General I</div>
+      <div class="ramo" data-id="matematica1">Matemática I</div>
+      <div class="ramo" data-id="biologia1">Biología General</div>
+      <div class="ramo" data-id="fisica1">Física General I</div>
+      <div class="ramo" data-id="quimica_org1">Química Orgánica I</div>
+    </div>
+    <div class="semestre" data-semestre="2">
+      <h2>2° Semestre</h2>
+      <div class="ramo" data-id="quimica2">Química General II</div>
+      <div class="ramo" data-id="matematica2">Matemática II</div>
+      <div class="ramo" data-id="fisica2">Física General II</div>
+      <div class="ramo" data-id="biologia2">Biología Celular</div>
+      <div class="ramo" data-id="quimica_org2">Química Orgánica II</div>
+    </div>
+    <div class="semestre" data-semestre="3">
+      <h2>3° Semestre</h2>
+      <div class="ramo" data-id="analitica1">Química Analítica I</div>
+      <div class="ramo" data-id="bioquimica1">Bioquímica I</div>
+      <div class="ramo" data-id="microbiologia1">Microbiología I</div>
+      <div class="ramo" data-id="estadistica">Estadística Aplicada</div>
+      <div class="ramo" data-id="quimica_fisica1">Química Física I</div>
+    </div>
+    <div class="semestre" data-semestre="4">
+      <h2>4° Semestre</h2>
+      <div class="ramo" data-id="analitica2">Química Analítica II</div>
+      <div class="ramo" data-id="bioquimica2">Bioquímica II</div>
+      <div class="ramo" data-id="microbiologia2">Microbiología II</div>
+      <div class="ramo" data-id="quimica_fisica2">Química Física II</div>
+      <div class="ramo" data-id="farmacologia1">Farmacología I</div>
+    </div>
+    <div class="semestre" data-semestre="5">
+      <h2>5° Semestre</h2>
+      <div class="ramo" data-id="farmacia_general">Farmacia General</div>
+      <div class="ramo" data-id="farmacognosia">Farmacognosia</div>
+      <div class="ramo" data-id="tecnologia_farmaceutica1">Tecnología Farmacéutica I</div>
+      <div class="ramo" data-id="toxicologia1">Toxicología I</div>
+      <div class="ramo" data-id="quimica_medica">Química Médica</div>
+    </div>
+    <div class="semestre" data-semestre="6">
+      <h2>6° Semestre</h2>
+      <div class="ramo" data-id="tecnologia_farmaceutica2">Tecnología Farmacéutica II</div>
+      <div class="ramo" data-id="farmacologia2">Farmacología II</div>
+      <div class="ramo" data-id="toxicologia2">Toxicología II</div>
+      <div class="ramo" data-id="microbiologia3">Microbiología III</div>
+      <div class="ramo" data-id="quimica_analitica_instrumental">Química Analítica Instrumental</div>
+    </div>
+    <div class="semestre" data-semestre="7">
+      <h2>7° Semestre</h2>
+      <div class="ramo" data-id="farmacia_clinica">Farmacia Clínica</div>
+      <div class="ramo" data-id="gestion_calidad">Gestión de Calidad</div>
+      <div class="ramo" data-id="bioetica">Bioética</div>
+      <div class="ramo" data-id="investigacion">Investigación Científica</div>
+      <div class="ramo" data-id="electivo">Electivo</div>
+    </div>
+    <div class="semestre" data-semestre="8">
+      <h2>8° Semestre</h2>
+      <div class="ramo" data-id="practica1">Práctica Profesional I</div>
+      <div class="ramo" data-id="seminario1">Seminario de Tesis I</div>
+      <div class="ramo" data-id="electivo2">Electivo II</div>
+    </div>
+    <div class="semestre" data-semestre="9">
+      <h2>9° Semestre</h2>
+      <div class="ramo" data-id="practica2">Práctica Profesional II</div>
+      <div class="ramo" data-id="seminario2">Seminario de Tesis II</div>
+    </div>
+    <div class="semestre" data-semestre="10">
+      <h2>10° Semestre</h2>
+      <div class="ramo" data-id="trabajo_grado">Trabajo de Grado</div>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
