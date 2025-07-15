@@ -1,0 +1,31 @@
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+h1 {
+  color: #333;
+}
+.semestre {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-left: 5px solid #aaa;
+}
+.ramo {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+.bloqueado input {
+  pointer-events: none;
+}
+.ramo.bloqueado {
+  background-color: #d0d8e8;
+}
+.ramo.desbloqueado {
+  background-color: #a0eaff;
+}
+.ramo.completado {
+  background-color: #fffaa0;
+}
